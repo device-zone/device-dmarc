@@ -1,2 +1,2 @@
-# device-dmarc
+# device-opendmarc
 DMARC milter appliance
