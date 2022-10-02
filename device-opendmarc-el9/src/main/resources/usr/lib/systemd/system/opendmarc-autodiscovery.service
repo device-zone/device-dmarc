@@ -1,0 +1,18 @@
+# systemd service for managing all opendmarc autoconfiguration.
+
+[Unit]
+Description=OpenDKIM Configuration Autodiscovery
+Requires=opendmarc.service
+PartOf=opendmarc.service
+ReloadPropagatedFrom=opendmarc.service
+Before=opendmarc.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /usr/libexec/device-opendmarc-autodiscovery
+ExecReload=/bin/bash /usr/libexec/device-opendmarc-autodiscovery
+RemainAfterExit=on
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,7 @@
+if [ $1 = 0 ]; then
+  /usr/bin/systemctl stop opendmarc-autodiscovery.service
+  /usr/bin/systemctl stop opendmarc.service
+  /usr/bin/systemctl disable opendmarc-autodiscovery.service
+  /usr/bin/systemctl disable opendmarc.service
+fi
+

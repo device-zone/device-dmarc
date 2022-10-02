@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+umask 0002
+
+if [ "$1" == "--" ]; then
+
+  /usr/bin/sudo /usr/bin/systemctl --quiet disable opendmarc-autodiscovery.service
+  /usr/bin/sudo /usr/bin/systemctl --quiet disable opendmarc.service
+
+  if test -f "disabled"; then
+    echo "opendmarc is already disabled."
+  elif test -f "enabled"; then
+    mv "enabled" "disabled"
+    /usr/bin/sudo /usr/bin/systemctl stop opendmarc.service
+    /usr/bin/sudo /usr/bin/systemctl stop opendmarc-autodiscovery.service
+  fi
+
+fi
+
