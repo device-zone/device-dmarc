@@ -7,6 +7,7 @@ This appliance does the following:
 - Binds securely to the unix domain socket /run/opendmarc/opendmarc.sock.
 - Enables enforcement of email DMARC policies.
 - Autostarts on server restart.
+- Zero Trust configuration.
 
 ## before
 
