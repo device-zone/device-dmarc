@@ -9,11 +9,15 @@ if [ "$1" == "--" ]; then
   /usr/bin/sudo /usr/bin/systemctl --quiet disable opendmarc.service
 
   if test -f "disabled"; then
-    echo "opendmarc is already disabled."
+    echo "dmarc is already disabled."
   elif test -f "enabled"; then
     mv "enabled" "disabled"
     /usr/bin/sudo /usr/bin/systemctl stop opendmarc.service
     /usr/bin/sudo /usr/bin/systemctl stop opendmarc-autodiscovery.service
+  fi
+
+  if test -f "disabled"; then
+    rm -f /etc/device/services/mail/smtp/milters/30-opendmarc
   fi
 
 fi

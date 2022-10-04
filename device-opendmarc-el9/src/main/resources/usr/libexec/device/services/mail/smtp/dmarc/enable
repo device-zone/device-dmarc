@@ -16,7 +16,12 @@ if [ "$1" == "--" ]; then
     /usr/bin/sudo /usr/bin/systemctl restart opendmarc.service
   else
     touch "enabled"
-    echo "arc will be enabled on next reboot."
+    echo "dmarc will be enabled on next reboot."
+  fi
+
+  if test -f "enabled"; then
+    mkdir -p /etc/device/services/mail/smtp/milters/
+    ln -s /run/opendmarc/opendmarc.sock /etc/device/services/mail/smtp/milters/30-opendmarc
   fi
 
 fi

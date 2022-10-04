@@ -427,5 +427,6 @@ mv "${ignore_hosts}" "/etc/opendmarc/ignore.hosts"
 
 
 
+
 logger -t "${0}" "Notice: OpenDMARC autodiscovery complete."
 
