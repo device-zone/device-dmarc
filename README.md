@@ -3,6 +3,7 @@ Provides an OpenDMARC appliance.
 
 This appliance does the following:
 
+- All parameters syntax checked and canonicalised.
 - Automatically configures OpenDMARC's configuration files before startup.
 - Binds securely to the unix domain socket /run/opendmarc/opendmarc.sock.
 - Enables enforcement of email DMARC policies.
