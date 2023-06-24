@@ -5,23 +5,18 @@ umask 0002
 
 if [ "$1" == "--" ]; then
 
-  /usr/bin/sudo /usr/bin/systemctl --quiet enable opendmarc-autodiscovery.service
   /usr/bin/sudo /usr/bin/systemctl --quiet enable opendmarc.service
 
-  if test -f "enabled"; then
+  if test ! -f "disabled.bin"; then
     echo "dmarc is already enabled."
-  elif test -f "disabled"; then
-    mv "disabled" "enabled"
-    /usr/bin/sudo /usr/bin/systemctl restart opendmarc-autodiscovery.service
-    /usr/bin/sudo /usr/bin/systemctl restart opendmarc.service
   else
-    touch "enabled"
-    echo "dmarc will be enabled on next reboot."
-  fi
-
-  if test -f "enabled"; then
-    mkdir -p /etc/device/services/mail/smtp/milters/
-    ln -s /run/opendmarc/opendmarc.sock /etc/device/services/mail/smtp/milters/30-opendmarc
+    rm "disabled.bin"
+    if systemctl is-active --quiet opendmarc-autodiscovery.service; then
+      /usr/bin/sudo /usr/bin/systemctl restart opendmarc-autodiscovery.service
+      /usr/bin/sudo /usr/bin/systemctl restart opendmarc.service
+    else
+      echo "dmarc will be enabled on next reboot."
+    fi
   fi
 
 fi

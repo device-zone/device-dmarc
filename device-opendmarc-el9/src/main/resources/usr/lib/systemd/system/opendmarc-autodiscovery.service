@@ -9,8 +9,8 @@ Before=opendmarc.service
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash /usr/libexec/device-opendmarc-autodiscovery
-ExecReload=/bin/bash /usr/libexec/device-opendmarc-autodiscovery
+ExecStart=/bin/bash /usr/libexec/device-autodiscovery/opendmarc
+ExecReload=/bin/bash /usr/libexec/device-autodiscovery/opendmarc
 RemainAfterExit=on
 
 [Install]
