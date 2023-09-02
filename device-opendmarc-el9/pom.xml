@@ -159,6 +159,9 @@
                 <source>
                   <location>target/classes/usr/libexec/device/services/mail/smtp/dmarc/set</location>
                 </source>
+                <source>
+                  <location>target/classes/usr/libexec/device/services/mail/smtp/dmarc/show</location>
+                </source>
               </sources>
             </mapping>
           </mappings>
