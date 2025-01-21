@@ -20,9 +20,9 @@
   </organization>
 
   <scm>
-    <connection>scm:svn:https://github.com/device-zone/device-opendmarc/trunk</connection>
-    <developerConnection>scm:svn:https://github.com/device-zone/device-opendmarc/trunk</developerConnection>
-    <url>https://github.com/device-zone/device-opendmarc/trunk</url>
+    <connection>scm:git:https://github.com/device-zone/device-opendmarc.git</connection>
+    <developerConnection>scm:git:https://github.com/device-zone/device-opendmarc.git</developerConnection>
+    <url>https://github.com/device-zone/device-opendmarc/</url>
   </scm>
 
   <modules>
