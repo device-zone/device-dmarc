@@ -8,7 +8,7 @@
 
   <artifactId>device-opendmarc</artifactId>
   <groupId>zone.device.platform</groupId>
-  <version>0.9.4-SNAPSHOT</version>
+  <version>0.9.4</version>
   <packaging>pom</packaging>
   <name>device opendmarc package</name>
   <description>Packaging for the opendmarc appliance</description>
@@ -23,6 +23,7 @@
     <connection>scm:git:https://github.com/device-zone/device-opendmarc.git</connection>
     <developerConnection>scm:git:https://github.com/device-zone/device-opendmarc.git</developerConnection>
     <url>https://github.com/device-zone/device-opendmarc/</url>
+    <tag>device-opendmarc-0.9.4</tag>
   </scm>
 
   <modules>
