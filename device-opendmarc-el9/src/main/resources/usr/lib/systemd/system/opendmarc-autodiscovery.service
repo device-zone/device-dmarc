@@ -1,7 +1,7 @@
 # systemd service for managing all opendmarc autoconfiguration.
 
 [Unit]
-Description=OpenDKIM Configuration Autodiscovery
+Description=OpenDMARC Configuration Autodiscovery
 Requires=opendmarc.service
 PartOf=opendmarc.service
 ReloadPropagatedFrom=opendmarc.service
